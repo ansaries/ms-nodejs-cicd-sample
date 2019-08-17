@@ -1,0 +1,28 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "Todos Micro Service",
+  "main": "./build/server.js",
+  "scripts": {
+    "start": "nodemon  -e \"ts js json\"  -L -w ./ -x \"node --inspect=0.0.0.0:7000 -r ts-node/register ./server.ts\"",
+    "debug": "nodemon --debug --config ./nodemon.json",
+    "clean": "rimraf -f ./build",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arslan.ansari@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/mongoose": "^5.5.12",
+    "@types/node": "^12.7.2",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}

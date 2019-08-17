@@ -1,0 +1,9 @@
+{
+  "watch": ["./"],
+  "ext": "ts",
+  "debug": true,
+  "inspect": true,
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "ts-node ./server.ts",
+  "port": 5858
+}
