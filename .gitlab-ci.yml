@@ -27,3 +27,5 @@ step-deploy-prod:
     - sudo docker-compose up -d
   environment: production
   when: manual
+
+  
