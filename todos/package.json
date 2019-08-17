@@ -4,7 +4,8 @@
   "description": "Todos Micro Service",
   "main": "./build/server.js",
   "scripts": {
-    "start": "nodemon  -e \"ts js json\"  -L -w ./ -x \"node --inspect=0.0.0.0:7000 -r ts-node/register ./server.ts\"",
+    "start": "nodemon --config ./nodemon.json",
+    "prod": "node ./build/server.js",
     "debug": "nodemon --debug --config ./nodemon.json",
     "clean": "rimraf -f ./build",
     "build": "tsc",

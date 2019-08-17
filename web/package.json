@@ -5,6 +5,7 @@
   "main": "./build/server.js",
   "scripts": {
     "start": "nodemon --config ./nodemon.json",
+    "prod": "node ./build/server.js", 
     "clean": "rm -f ./build",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"

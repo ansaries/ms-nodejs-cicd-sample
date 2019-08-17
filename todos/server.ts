@@ -1,11 +1,8 @@
-require("ts-node").register({
-  project: 'tsconfig.json'
-});
-
 import mongoose from "mongoose";
 import { DB_URI } from "./src/config/index";
 import { app } from "./src/app";
 import { Express } from 'express';
+
 
 
 mongoose.connect(DB_URI, {

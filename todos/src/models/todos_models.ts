@@ -17,3 +17,24 @@ export interface TODO {
 };
 
 export const Todos = mongoose.model<TODO & mongoose.Document>("Todos", TodosSchema);
+
+/**
+ * Fixtures
+ */
+Todos.find({}).count()
+.then(v => {
+  try{
+    if(v <=0) {
+      for(let i = 0; i < 5; i++) {
+        const todo = new Todos({
+          title: `${i} -- Title`,
+          description: `${i} -- Description`,
+          createdAt: new Date(),        
+        }); 
+        todo.save();
+      }
+    }
+  } catch(e) {
+    console.log(e);
+  }
+});

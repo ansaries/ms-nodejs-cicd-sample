@@ -5,7 +5,7 @@ services:
     image: webapp:v1
     ports:
       - "3000:3000"
-   
+    command: npm run prod
 
   todos:
     build: ./todos
@@ -17,14 +17,14 @@ services:
       - db
     volumes:
       - ./todos:/todos
-    command: dockerize -wait tcp://db:27017 -timeout 1m npm run start
+    command: dockerize -wait tcp://db:27017 -timeout 60m npm run prod
     environment:
       - MONGO_DB_URI=mongodb://db:27017/microservicesdb
     
   db:
     image: mongo       
-    # volumes:
-    #   - ./data:/data/db
+    volumes:
+      - ./data:/data/db
 
 
   nginx:
