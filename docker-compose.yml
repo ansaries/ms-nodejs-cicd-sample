@@ -15,8 +15,6 @@ services:
       - "7000:7000"
     depends_on:
       - db
-    volumes:
-      - ./todos:/todos
     command: dockerize -wait tcp://db:27017 -timeout 60m npm run prod
     environment:
       - MONGO_DB_URI=mongodb://db:27017/microservicesdb
