@@ -70,7 +70,6 @@
   },
   "exclude": [
         ".idea",
-        "build",
         "node_modules",
         "typings/globals",
         "typings/modules"
