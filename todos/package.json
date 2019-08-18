@@ -5,7 +5,7 @@
   "main": "./build/server.js",
   "scripts": {
     "start": "nodemon --config ./nodemon.json",
-    "prod": "tsc && node build/server.js",
+    "prod": "node ./build/server.js", 
     "debug": "nodemon --debug --config ./nodemon.json",
     "clean": "rimraf -f ./build",
     "build": "tsc",

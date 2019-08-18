@@ -4,9 +4,21 @@ services:
   - docker:dind
 
 stages:
+  - build
   - test
   - deploy
 
+build:
+  stage: build
+  only:
+    - develop
+    - production
+  script:
+    - sudo apt-get install -y python-pip
+    - pip install docker-compose
+    - sudo docker image prune -f
+    - sudo docker-compose build --no-cache
+    
 test:
   stage: test
   only:
@@ -19,13 +31,8 @@ step-deploy-prod:
   stage: deploy
   only:
     - production
-  script:
-    - sudo apt-get install -y python-pip
-    - pip install docker-compose
-    - sudo docker image prune -f
-    - sudo docker-compose build --no-cache
+  script:    
     - sudo docker-compose up -d
   environment: production
   when: manual
 
-  
